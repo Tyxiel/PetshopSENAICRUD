@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetshopSENAICRUD.Models;
 
@@ -11,9 +12,10 @@ using PetshopSENAICRUD.Models;
 namespace PetshopSENAICRUD.Migrations
 {
     [DbContext(typeof(PetshopSENAIDBContext))]
-    partial class PetshopSENAIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250429150914_FixDB")]
+    partial class FixDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
