@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PetshopSENAICRUD.Models.Pagamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFormaDePagamentoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdConsultaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdFormaDePagamentoNavigation.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdConsultaNavigation.IdConsulta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPagamento">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPagamento">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPagamento">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

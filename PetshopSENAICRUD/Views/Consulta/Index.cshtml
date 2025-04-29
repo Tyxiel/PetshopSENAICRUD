@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PetshopSENAICRUD.Models.Consultum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAnimalNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdStatusNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdVeterinarioNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAnimalNavigation.Especie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdStatusNavigation.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVeterinarioNavigation.Crmv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdConsulta">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdConsulta">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdConsulta">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

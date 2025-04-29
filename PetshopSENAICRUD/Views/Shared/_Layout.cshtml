@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PetshopSENAI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PetshopSENAICRUD.styles.css" asp-append-version="true" />
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.2.2/datatables.min.css" rel="stylesheet" integrity="sha384-M6C9anzq7GcT0g1mv0hVorHndQDVZLVBkRVdRb2SsQT7evLamoeztr1ce+tvn+f2" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 col-lg-2 p-0 bg-light">
+                <nav class="navbar navbar-expand-md navbar-light bg-light flex-column">
+                    <div class="navbar-brand text-center py-3" style="font-size: 24px; font-weight: bold;">PetshopSENAI</div>
+                    <ul class="navbar-nav flex-column w-100">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bx-home' style="font-size: 20px; margin-right: 10px;"></i> Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Cliente" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bx-user' style="font-size: 20px; margin-right: 10px;"></i> Clientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Animal" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bxs-dog' style="font-size: 20px; margin-right: 10px;"></i> Animais
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Consulta" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bx-notepad' style="font-size: 20px; margin-right: 10px;"></i> Consultas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Veterinario" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bx-plus-medical' style="font-size: 20px; margin-right: 10px;"></i> Veterinários
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center py-3 px-4" asp-area="" asp-controller="Pagamento" asp-action="Index" style="font-size: 18px;">
+                                <i class='bx bx-credit-card' style="font-size: 20px; margin-right: 10px;"></i> Pagamentos
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <!-- Main content -->
+            <div class="col-md-10 col-lg-10">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light border-top text-center py-3 text-muted">
+        <div class="container">
+            <span>&copy; 2025 - <strong>PetshopSENAICRUD</strong></span>
+            <span class="mx-2">|</span>
+            <a class="text-decoration-none text-primary" asp-controller="Home" asp-action="Privacy">Política de privacidade</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.2.2/datatables.min.js" integrity="sha384-k90VzuFAoyBG5No1d5yn30abqlaxr9+LfAPp6pjrd7U3T77blpvmsS8GqS70xcnH" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- DataTable Initialization (exemplo) -->
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
