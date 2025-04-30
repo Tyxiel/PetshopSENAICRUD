@@ -1,8 +1,121 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "PetshopSENAI - Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <!-- Cabeçalho -->
+    <h1 class="text-center text-primary">@ViewData["Title"]</h1>
+    <p class="lead text-center">Bem-vindo ao PetshopSENAI - Sistema de gerenciamento para clínicas veterinárias</p>
+
+    <!-- Jumbotron (Destaque) -->
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h4>Bem-vindo ao PetshopSENAI</h4>
+        </div>
+        <div class="card-body text-center">
+            <p class="display-4">Gerenciamento completo de clientes, animais e consultas</p>
+        </div>
+    </div>
+
+    <!-- Seção Missão e Valores -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4>Nossa Missão</h4>
+                </div>
+                <div class="card-body">
+                    <p>Oferecer soluções inovadoras e eficientes para o gerenciamento de dados de clientes, animais e consultas, garantindo qualidade e segurança no atendimento veterinário.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4>Nossos Valores</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong>Inovação:</strong> Soluções tecnológicas que facilitam o fluxo dos processos.</li>
+                        <li><strong>Eficiência:</strong> Otimização do tempo e dos recursos na gestão dos processos.</li>
+                        <li><strong>Segurança:</strong> Proteção e integridade dos dados dos clientes e animais.</li>
+                        <li><strong>Qualidade:</strong> Atendimento de excelência em todas as etapas do serviço.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Funcionalidades -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="text-center">Funcionalidades do Sistema</h2>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-around">
+        <!-- Cadastro de Clientes -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="bi bi-person-fill" style="font-size: 48px;"></i>
+                    <h3 class="mt-3">Cadastro de Clientes</h3>
+                    <p>Inclua e gerencie as informações dos clientes, garantindo dados completos e atualizados.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Cliente" class="btn btn-outline-info">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cadastro de Animais -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="bi bi-paw" style="font-size: 48px;"></i>
+                    <h3 class="mt-3">Cadastro de Animais</h3>
+                    <p>Registre os dados dos animais, vinculando cada um ao seu respectivo cliente.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Animal" class="btn btn-outline-info">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agendamento de Consultas -->
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="bi bi-calendar-check" style="font-size: 48px;"></i>
+                    <h3 class="mt-3">Agendamento de Consultas</h3>
+                    <p>Marque consultas veterinárias e gerencie o fluxo de atendimento de forma simples e prática.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Consulta" class="btn btn-outline-info">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Notificações e Relatórios -->
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4>Notificações e Lembretes</h4>
+                </div>
+                <div class="card-body">
+                    <p>Receba lembretes por SMS, e-mail ou notificações no aplicativo para consultas agendadas e atualizações do sistema.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4>Relatórios e Feedback</h4>
+                </div>
+                <div class="card-body">
+                    <p>Emita relatórios financeiros, históricos de consultas e registre feedbacks para aprimorar o atendimento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

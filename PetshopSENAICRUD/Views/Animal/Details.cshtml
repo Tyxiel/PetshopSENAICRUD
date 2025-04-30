@@ -1,48 +1,35 @@
 ﻿@model PetshopSENAICRUD.Models.Animal
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Animal";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Animal</h4>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Detalhes do Animal</h1>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Raca)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Raca)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Idade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Idade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdClienteNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdClienteNavigation.Email)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdAnimal">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <dl class="row">
+                <dt class="col-sm-4">Nome</dt>
+                <dd class="col-sm-8">@Model.Nome</dd>
+
+                <dt class="col-sm-4">Espécie</dt>
+                <dd class="col-sm-8">@Model.Especie</dd>
+
+                <dt class="col-sm-4">Raça</dt>
+                <dd class="col-sm-8">@Model.Raca</dd>
+
+                <dt class="col-sm-4">Idade</dt>
+                <dd class="col-sm-8">@Model.Idade</dd>
+
+                <dt class="col-sm-4">Email do Dono</dt>
+                <dd class="col-sm-8">@Model.IdClienteNavigation?.Email</dd>
+            </dl>
+
+            <div class="mt-3">
+                <a asp-action="Edit" asp-route-id="@Model.IdAnimal" class="btn btn-primary me-2">Editar</a>
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+            </div>
+        </div>
+    </div>
 </div>

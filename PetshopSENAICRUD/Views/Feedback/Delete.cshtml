@@ -1,39 +1,32 @@
 ﻿@model PetshopSENAICRUD.Models.Feedback
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir Feedback";
 }
 
-<h1>Delete</h1>
+<h1 class="my-4">Excluir Feedback</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Feedback</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdClienteNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdClienteNavigation.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdTipoFeedbackNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdTipoFeedbackNavigation.Descricao)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="IdFeedback" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<h3>Tem certeza de que deseja excluir este feedback?</h3>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Informações do Feedback</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Tipo)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Tipo)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.IdClienteNavigation)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.IdClienteNavigation.Email)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.IdTipoFeedbackNavigation)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.IdTipoFeedbackNavigation.Descricao)</dd>
+        </dl>
+    </div>
 </div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdFeedback" />
+    <button type="submit" class="btn btn-danger">Excluir</button> |
+    <a asp-action="Index" class="btn btn-secondary">Voltar à lista</a>
+</form>
