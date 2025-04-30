@@ -9,7 +9,7 @@ namespace PetshopSENAICRUD.Models
         [Key]
         public int IdFeedback { get; set; }
 
-        [Required]  // Torna o campo obrigatório
+        [Required]
         public byte Tipo { get; set; }
 
         public int? IdCliente { get; set; }
@@ -17,7 +17,7 @@ namespace PetshopSENAICRUD.Models
         [ForeignKey("IdCliente")]
         public virtual Cliente? IdClienteNavigation { get; set; }
 
-        // Referência para TipoFeedback
+
         public int? IdTipoFeedback { get; set; }
 
         [ForeignKey("IdTipoFeedback")]

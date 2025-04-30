@@ -17,30 +17,28 @@ namespace PetshopSENAICRUD.Models
         public int IdCliente { get; set; }
 
         [Required]
-        [StringLength(150)]  // Limita o tamanho da string
+        [StringLength(150)]
         public string Nome { get; set; } = null!;
 
         [Required]
-        [StringLength(150)]  // Limita o tamanho da string
+        [StringLength(150)]
         public string Endereco { get; set; } = null!;
 
         [Required]
-        [EmailAddress]  // Valida o formato do e-mail
-        [StringLength(100)]  // Limita o tamanho do e-mail
+        [EmailAddress]
+        [StringLength(100)]
         public string Email { get; set; } = null!;
 
         [Required]
-        [Phone]  // Valida o formato do telefone
-        [StringLength(14)]  // Limita o tamanho do telefone
+        [Phone]
+        [StringLength(14)]
         public string Telefone { get; set; } = null!;
 
-        // Navigation properties
         public virtual ICollection<Animal> Animals { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Notificacao> Notificacaos { get; set; }
 
-        // Foreign key reference to PreferenciaDeNotificacao
-        public int? IdPreferencia { get; set; }  // Nullable foreign key
-        public virtual PreferenciaDeNotificacao? IdPreferenciaNavigation { get; set; }  // Navigation property to PreferenciaDeNotificacao
+        public int? IdPreferencia { get; set; }
+        public virtual PreferenciaDeNotificacao? IdPreferenciaNavigation { get; set; }
     }
 }
